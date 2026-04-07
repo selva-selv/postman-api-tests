@@ -1,0 +1,20 @@
+{
+  "name": "postman-api-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run collections/collection.json -e environments/environment.json --reporters cli,htmlextra --reporter-htmlextra-export reports/test-report.html",
+    "test:admin": "newman run collections/collection.json -e environments/environment.json --folder 'Admin APIs - Admin Console' --reporters cli",
+    "test:mobile": "newman run collections/collection.json -e environments/environment.json --folder 'Mobile APIs - Mobile App' --reporters cli",
+    "test:health": "newman run collections/collection.json -e environments/environment.json --folder 'Health Check' --reporters cli"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "newman": "^6.2.2",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}

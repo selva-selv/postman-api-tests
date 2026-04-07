@@ -1,0 +1,13 @@
+{
+  "id": "your-env-id",
+  "name": "Dev Environment",
+  "values": [
+    { "key": "base_url", "value": "https://measurement-api-dev.magicktech.com/v1", "enabled": true },
+    { "key": "xTenantId", "value": "magickhome", "enabled": true },
+    { "key": "accessToken", "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InNlc3Npb25JZCI6IjY5ZDQ5ZTc2NWUxZmE0MmM5OTBhZTNjNiIsInVzZXJJZCI6IjY5MmQyMTAyYmYwZDY5ZjE0NjhkNTBmZiIsImZ1bGxOYW1lIjoiU0VMVkFSQUdBVkFOIEoiLCJlbWFpbCI6InNlbHZhcmFnYXZhbmpAZ21haWwuY29tIiwicGVybWlzc2lvbnNBcnJheSI6W10sInJvbGVzQXJyYXkiOltdLCJ0ZW5hbnROYW1lIjoibWFnaWNraG9tZSJ9LCJpYXQiOjE3NzU1NDE4NzgsImV4cCI6MTc3ODEzMzg3OH0.6gIbVeJypaA_pVyuq4ldKp1TW2fkN6Rr-96yFS4u47g", "enabled": true },
+    { "key": "adminAccessToken", "value": "", "enabled": true },
+    { "key": "superAdminAccessToken", "value": "", "enabled": true },
+    { "key": "userToken", "value": "", "enabled": true }
+  ],
+  "_postman_variable_scope": "environment"
+}
