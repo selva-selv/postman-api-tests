@@ -26,3 +26,9 @@ jobs:
           -e environments/environment.json \
           -r cli,htmlextra \
           --reporter-htmlextra-export reports/report.html
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: API-Test-Report
+          path: reports/report.html
