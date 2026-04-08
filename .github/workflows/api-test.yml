@@ -25,10 +25,31 @@ jobs:
           newman run collections/collection.json \
           -e environments/environment.json \
           -r cli,htmlextra \
-          --reporter-htmlextra-export reports/report.html
+          --reporter-htmlextra-export reports/report.html | tee newman-output.txt
+
+      - name: Show Test Summary
+        run: |
+          echo "===== TEST SUMMARY ====="
+          grep "assertions" newman-output.txt || true
 
       - name: Upload Report
-        uses: actions/upload-artifact@v4    
+        uses: actions/upload-artifact@v4
         with:
           name: API-Test-Report
           path: reports/report.html
+
+      - name: Send Email Report   # ✅ INSIDE steps
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: API Test Report
+          body: |
+            API Test execution completed.
+            Please find the attached report.
+          to: selvaragavanj@magicktech.com
+          from: selvaragavanj@magicktech.com
+          secure: false
+          attachments: reports/report.html
